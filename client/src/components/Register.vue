@@ -30,8 +30,14 @@ export default {
       password: ''
     }
   },
+  watch: {
+    email (value) {
+      console.log('email is ', value)
+    }
+  },
   methods: {
     async register () {
+      console.log('registration of ', this.email, this.password)
       await AuthenticationService.register({
         email: this.email,
         password: this.password
